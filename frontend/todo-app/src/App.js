@@ -37,7 +37,7 @@ function App() {
           Add
         </button>
       </div>
-      <ul className='list-disc list-inside my-4'>{listEl}</ul>
+      <ul className='list-inside list-decimal my-4'>{listEl}</ul>
     </div>
   );
 }
