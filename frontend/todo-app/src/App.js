@@ -14,8 +14,22 @@ function App() {
     setTodo([...todo, inputData]);
     setInputData("");
   }
-  const listEl = todo.map((item) => {
-    return <li>{item}</li>;
+  function deleteTodo(index) {
+    const newTodo = todo.filter((_, i) => i !== index);
+    setTodo(newTodo);
+  }
+  const listEl = todo.map((item, index) => {
+    return (
+      <li key={index} className='flex justify-between items-center mb-2'>
+        {item}
+        <button
+          onClick={() => deleteTodo(index)}
+          className='bg-red-500 hover:bg-red-700 text-white py-1 px-2.5 mx-5 rounded'
+        >
+          X
+        </button>
+      </li>
+    );
   });
 
   return (
