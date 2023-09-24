@@ -30,3 +30,35 @@ def taskList(request):
     # since we are serializing a list of objects, we set many=True, if we wanted to serialize only one object set many=False 
     serializer = TaskSerializer(tasks, many=True) 
     return Response(serializer.data) # returns the data serialized by TaskSerializer
+
+@api_view(['GET'])
+def taskDetail(request, pk):
+    tasks = Task.objects.get(id=pk) # equivalent to SELECT * FROM task where id = pk
+    serializer = TaskSerializer(tasks, many=False) 
+    return Response(serializer.data) # returns the data serialized by TaskSerializer
+
+@api_view(['POST'])
+def taskCreate(request):
+    serializer = TaskSerializer(data=request.data) # 'request.data' is  equivalent to request.post, we will be receiving json data
+
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def taskUpdate(request, pk):
+    task = Task.objects.get(id=pk)
+    serializer = TaskSerializer(instance=task, data=request.data) # same as above view but here, 'instance=task' will update the current instance, i.e. the task with specific id
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
+
+@api_view(['DELETE'])
+def taskDelete(request, pk):
+    task = Task.objects.get(id=pk)
+    task.delete()
+
+    return Response('Item deleted successfully')
