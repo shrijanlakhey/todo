@@ -31,12 +31,6 @@ def taskList(request):
     serializer = TaskSerializer(tasks, many=True) 
     return Response(serializer.data) # returns the data serialized by TaskSerializer
 
-@api_view(['GET'])
-def taskDetail(request, pk):
-    tasks = Task.objects.get(id=pk) # equivalent to SELECT * FROM task where id = pk
-    serializer = TaskSerializer(tasks, many=False) 
-    return Response(serializer.data) # returns the data serialized by TaskSerializer
-
 @api_view(['POST'])
 def taskCreate(request):
     serializer = TaskSerializer(data=request.data) # 'request.data' is  equivalent to request.post, we will be receiving json data
