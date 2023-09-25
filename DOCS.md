@@ -14,3 +14,4 @@ npm install
 ### others
 - npm i axios
 - npm i uuid
+- npm i simplebar-react
