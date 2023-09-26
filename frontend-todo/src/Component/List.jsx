@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react'
-
 const List = (props) => {
     const {todoData, updateTodo, deleteTodo} = props;
     const {id, title, completed} = todoData;  // destructuring the properties of todo...

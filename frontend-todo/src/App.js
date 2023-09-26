@@ -17,7 +17,7 @@ function App() {
     try {
       const response = await axios({
         method: 'get',
-        url: url,
+        url,
       })
 
       const data = await response.data;
