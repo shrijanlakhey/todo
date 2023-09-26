@@ -15,7 +15,8 @@ export default function Input(props) {
       />
       <button
         onClick={addTodoFunc}
-        className='bg-[hsl(199,89%,48%)] hover:bg-[hsl(199,89%,42%)] text-white font-bold py-2 px-4 rounded transition-all'
+        className={`bg-[hsl(199,89%,48%)] hover:bg-[hsl(199,89%,42%)] text-white font-bold py-2 px-4 rounded transition-all ${inputValue === "" ? "cursor-not-allowed" : "cursor-pointer"}`}
+        disabled={inputValue === ''}
       >
         Add
       </button>
