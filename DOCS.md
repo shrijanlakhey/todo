@@ -1,6 +1,6 @@
 # Dependencies to install
 
-## Cmd location: ./frontend/todo-app
+## Cmd location: ./frontend-todo/
 
 ### Install node modules
 npm install
@@ -15,3 +15,7 @@ npm install
 - npm i axios
 - npm i uuid
 - npm i simplebar-react
+
+## Python libraries and packages to install | Cmd location: ./backend-todo/
+- pip install djangorestframework
+- python -m pip install django-cors-headers
