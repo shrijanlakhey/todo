@@ -15,7 +15,7 @@ const List = (props) => {
             />
             <label 
                 htmlFor={`todo-${id}`}  
-                className={`cursor-pointer ${completed ? 'italic line-through text-slate-400' : ''}`} 
+                className={`cursor-pointer break-words break-all ${completed ? 'italic line-through text-slate-400' : ''}`} 
             >
               {title}
             </label>
