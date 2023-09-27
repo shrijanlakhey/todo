@@ -113,7 +113,7 @@ function App() {
           key={todo.id}
           todoData={todo}
           updateTodo={updateTodo}
-          deleteTodo={() => deleteTodo(todo.id)}
+          deleteTodo={deleteTodo}
         />
       </>
     );
