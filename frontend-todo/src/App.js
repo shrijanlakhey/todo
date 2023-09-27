@@ -100,7 +100,7 @@ function App() {
       });
   }
 
-  function deleteTodo(index) {
+  function deleteTodo(index, id) {
     const newTodo = todos.filter((_, i) => i !== index);
     setTodos(newTodo);
     deleteTodoFromAPI(id);
